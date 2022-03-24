@@ -1,0 +1,149 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Height="100" Width="100">
+      <Button Classes="gridBtn">I</Button>
+    </Border>
+  </Design.PreviewWith>
+
+  <Style Selector="Button.gridBtn, TextBox.gridTextBox">
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="FontSize" Value="20"/>
+  </Style>
+
+  <Style Selector="Button.gridBtn">
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+  </Style>
+
+  <Style Selector="Button.gridBtn:pointerover /template/ ContentPresenter">
+    <Setter Property="Background" Value="Gray"/>
+  </Style>
+
+  <Style Selector="TextBox.gridTextBox">
+    <Setter Property="TextAlignment" Value="Center"/>
+    <Setter Property="AcceptsReturn" Value="True"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+  </Style>
+
+  <Style Selector="TextBlock.gridTextBlock">
+    <Setter Property="TextAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+    <Setter Property="FontSize" Value="20"/>
+  </Style>
+
+  <Style Selector="Button#Observe, Button#Delete">
+    <Setter Property="CommandParameter" Value="{Binding $self.DataContext}"/>
+  </Style>
+
+  <Style Selector="Button#Observe">
+    <Setter Property="Command" Value="{Binding $parent[Window].DataContext.ObserveCommand}"/>
+  </Style>
+
+  <Style Selector="Button#Delete">
+    <Setter Property="Command" Value="{Binding $parent[Window].DataContext.DeleteCommand}"/>
+  </Style>
+
+  <Style Selector="Button#AddTask">
+    <Setter Property="Command" Value="{Binding $parent[Window].DataContext.OpenAddPage}"/>
+    <Setter Property="Grid.Row" Value="2"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="TextBlock#TaskHeader">
+    <Setter Property="Text" Value="{Binding Header}"/>
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="DatePicker.NoteDate">
+    <Setter Property="VerticalAlignment" Value="Stretch"/>
+    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    <Setter Property="FontSize" Value="20"/>
+  </Style>
+
+  <Style Selector="Grid">
+    <Setter Property="ShowGridLines" Value="False"/>
+  </Style>
+
+  <Style Selector="ScrollViewer.Scroll">
+    <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="DatePicker#DateP">
+    <Setter Property="SelectedDate" Value="{Binding CurrentDate}"/>
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="ItemsControl.List">
+    <Setter Property="Items" Value="{Binding NoteList}"/>
+  </Style>
+
+  <Style Selector="Image#Lens">
+    <Setter Property="Source" Value="/Assets/in_zoom.ico"/>
+  </Style>
+
+  <Style Selector="Image#Trash">
+    <Setter Property="Source" Value="/Assets/trash.ico"/>
+  </Style>
+
+  <Style Selector="Image#Append">
+    <Setter Property="Source" Value="/Assets/add.ico"/>
+  </Style>
+
+  <Style Selector="Border.NotesWrapper">
+    <Setter Property="BorderBrush" Value="Yellow"/>
+    <Setter Property="BorderThickness" Value="2"/>
+    <Setter Property="CornerRadius" Value="3"/>
+    <Setter Property="Margin" Value="5"/>
+  </Style>
+
+  <Style Selector="Border.ButtonBorder">
+    <Setter Property="BorderBrush" Value="Blue"/>
+    <Setter Property="BorderThickness" Value="2"/>
+  </Style>
+
+  <Style Selector="Border#ObserveBorder">
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Grid.Column" Value="1"/>
+  </Style>
+
+  <Style Selector="Border#DeleteBorder">
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Grid.Column" Value="2"/>
+  </Style>
+
+  <!-- TaskView-->
+
+  <Style Selector="TextBox#Header">
+    <Setter Property="Watermark" Value="Название"/>
+    <Setter Property="Text" Value="{Binding Header}"/>
+    <Setter Property="Grid.Row" Value="0"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="TextBox#Description">
+    <Setter Property="Watermark" Value="Описание"/>
+    <Setter Property="Text" Value="{Binding Description}"/>
+    <Setter Property="Grid.Row" Value="1"/>
+    <Setter Property="Grid.Column" Value="0"/>
+  </Style>
+
+  <Style Selector="Button#Ok">
+    <Setter Property="Content" Value="OK"/>
+    <Setter Property="Grid.Row" Value="2"/>
+    <Setter Property="Grid.Column" Value="0"/>
+    <Setter Property="Command" Value="{Binding AddCommand}"/>
+  </Style>
+
+  <Style Selector="Button#Cancel">
+    <Setter Property="Content" Value="Cancel"/>
+    <Setter Property="Grid.Row" Value="3"/>
+    <Setter Property="Grid.Column" Value="0"/>
+    <Setter Property="Command" Value="{Binding CancelCommand}"/>
+  </Style>
+</Styles>

@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+             Height="450" Width="450"
+             x:Class="lab6visual.Views.TaskListView">
+  <UserControl.Styles>
+    <StyleInclude Source="/Styles/Style.axaml"/>
+  </UserControl.Styles>
+
+  <Grid Classes="NoteBook" ColumnDefinitions="*" RowDefinitions="50, *, 50">
+    <DatePicker Name="DateP" Classes="NoteDate"/>
+    <ScrollViewer Name="TaskScroll" Classes="Scroll">
+      <ItemsControl Name="TaskList" Classes="List">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Border Classes="NotesWrapper">
+              <Grid Classes="Note" ColumnDefinitions="*, 50, 50" RowDefinitions="*">
+                <TextBlock Name="TaskHeader" Classes="gridTextBlock"/>
+                <Border Name="ObserveBorder" Classes="ButtonBorder">
+                  <Button Name="Observe" Classes="gridBtn">
+                    <Image Name="Lens" Classes="Img"/>
+                  </Button>
+                </Border>
+                <Border Name="DeleteBorder" Classes="ButtonBorder">
+                  <Button Name="Delete" Classes="gridBtn">
+                    <Image Name="Trash" Classes="Img"/>
+                  </Button>
+                </Border>
+              </Grid>
+            </Border>
+          </DataTemplate>
+
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+    <Button Name="AddTask" Classes="gridBtn">
+      <Image Name="Append" Classes="Img"/>
+    </Button>
+  </Grid>
+</UserControl>
